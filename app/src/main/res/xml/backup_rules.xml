@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Only the web app catalog (Room database) and global preferences are backed up.
+  Per-web-app browser data - icons, WebView/GeckoView profiles - is deliberately
+  left out by only <include>-ing these two paths; everything else is excluded by
+  default once any <include> is present, so no explicit <exclude> is needed.
+-->
 <full-backup-content>
     <include domain="database" path="dockeredly.db" />
     <include domain="sharedpref" path="dockeredly_prefs.preferences_pb" />
-    <exclude domain="file" path="webapp_icons/" />
-    <exclude domain="file" path="webview_profiles/" />
-    <exclude domain="file" path="gecko_profiles/" />
 </full-backup-content>
