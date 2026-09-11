@@ -261,10 +261,14 @@ private fun RuntimeScreen(
 
 @Composable
 private fun EngineUnavailableScreen(engineType: RenderEngine, reason: String, onExit: () -> Unit) {
-    val titleRes = if (engineType == RenderEngine.CHROMIUM) {
-        R.string.engine_unavailable_chromium_title
+    val titleRes: Int
+    val bodyRes: Int
+    if (engineType == RenderEngine.CHROMIUM) {
+        titleRes = R.string.engine_unavailable_chromium_title
+        bodyRes = R.string.engine_unavailable_chromium_body
     } else {
-        R.string.engine_unavailable_gecko_title
+        titleRes = R.string.engine_unavailable_gecko_title
+        bodyRes = R.string.engine_unavailable_gecko_body
     }
     Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.surface), contentAlignment = Alignment.Center) {
         Column(
@@ -279,8 +283,24 @@ private fun EngineUnavailableScreen(engineType: RenderEngine, reason: String, on
                 tint = MaterialTheme.colorScheme.error,
             )
             Text(text = stringResource(titleRes), style = MaterialTheme.typography.titleLarge)
-            Text(text = reason, style = MaterialTheme.typography.bodyMedium)
-            Button(onClick = onExit) { Text(stringResource(R.string.action_close)) }
+            Text(
+                text = stringResource(bodyRes),
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(top = 4.dp),
+            )
+            Text(
+                text = reason,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            if (engineType == RenderEngine.GECKO) {
+                androidx.compose.material3.TextButton(onClick = onExit, modifier = Modifier.padding(top = 4.dp)) {
+                    Text(stringResource(R.string.engine_switch_to_chromium))
+                }
+            }
+            Button(onClick = onExit, modifier = Modifier.padding(top = 8.dp)) {
+                Text(stringResource(R.string.action_close))
+            }
         }
     }
 }

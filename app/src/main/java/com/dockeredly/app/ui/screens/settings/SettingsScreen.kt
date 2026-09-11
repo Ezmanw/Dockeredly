@@ -65,6 +65,13 @@ fun SettingsScreen(
         LazyColumn(modifier = Modifier.padding(padding)) {
             item { SectionHeader(stringResource(R.string.settings_section_appearance)) }
             item {
+                Text(
+                    text = stringResource(R.string.settings_theme),
+                    style = MaterialTheme.typography.labelLarge,
+                    modifier = Modifier.padding(start = 16.dp, top = 4.dp, bottom = 4.dp),
+                )
+            }
+            item {
                 Column {
                     ThemeModeRow(ThemeMode.SYSTEM, settings.themeMode, viewModel::setThemeMode)
                     ThemeModeRow(ThemeMode.LIGHT, settings.themeMode, viewModel::setThemeMode)

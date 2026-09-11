@@ -21,9 +21,9 @@ fun EmptyState(
     icon: ImageVector,
     title: String,
     body: String,
+    modifier: Modifier = Modifier,
     actionLabel: String? = null,
     onAction: (() -> Unit)? = null,
-    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier.fillMaxSize().padding(32.dp),
