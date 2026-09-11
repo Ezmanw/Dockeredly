@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <include domain="database" path="dockeredly.db" />
+    <include domain="sharedpref" path="dockeredly_prefs.preferences_pb" />
+    <exclude domain="file" path="webapp_icons/" />
+    <exclude domain="file" path="webview_profiles/" />
+    <exclude domain="file" path="gecko_profiles/" />
+</full-backup-content>

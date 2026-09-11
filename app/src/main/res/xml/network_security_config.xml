@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Cleartext is permitted because this app is a general-purpose container for
+         arbitrary user-supplied websites, some of which are HTTP-only. Creation flow
+         prefers HTTPS and warns on HTTP; engines still enforce standard TLS validation
+         for any HTTPS connection. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

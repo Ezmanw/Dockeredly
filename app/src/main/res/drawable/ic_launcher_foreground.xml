@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple 3x3 app-grid glyph, centered in the adaptive icon safe zone. -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="
+            M32,32h11v11h-11z
+            M48.5,32h11v11h-11z
+            M65,32h11v11h-11z
+            M32,48.5h11v11h-11z
+            M48.5,48.5h11v11h-11z
+            M65,48.5h11v11h-11z
+            M32,65h11v11h-11z
+            M48.5,65h11v11h-11z
+            M65,65h11v11h-11z" />
+</vector>
