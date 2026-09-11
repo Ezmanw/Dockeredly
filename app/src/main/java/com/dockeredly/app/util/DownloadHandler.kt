@@ -29,7 +29,7 @@ object DownloadHandler {
             setTitle(fileName)
             setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, fileName)
-            setAllowedOverMeteredNetworks(true)
+            setAllowedOverMetered(true)
         }
 
         runCatching {

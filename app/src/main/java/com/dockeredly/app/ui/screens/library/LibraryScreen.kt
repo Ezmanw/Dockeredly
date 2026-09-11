@@ -14,6 +14,8 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.KeyboardArrowDown
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.outlined.Language
@@ -38,7 +40,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.keyboard.ImeAction
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -249,10 +251,10 @@ private fun ReorderableRow(
                 .padding(end = 8.dp),
         ) {
             IconButton(onClick = onMoveUp, enabled = canMoveUp) {
-                Icon(androidx.compose.material.icons.Icons.Filled.KeyboardArrowUp, contentDescription = null)
+                Icon(Icons.Filled.KeyboardArrowUp, contentDescription = null)
             }
             IconButton(onClick = onMoveDown, enabled = canMoveDown) {
-                Icon(androidx.compose.material.icons.Icons.Filled.KeyboardArrowDown, contentDescription = null)
+                Icon(Icons.Filled.KeyboardArrowDown, contentDescription = null)
             }
         }
     }

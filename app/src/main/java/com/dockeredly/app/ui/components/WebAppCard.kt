@@ -1,5 +1,6 @@
 package com.dockeredly.app.ui.components
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,6 +24,7 @@ import com.dockeredly.app.R
 import com.dockeredly.app.domain.model.RenderEngine
 import com.dockeredly.app.domain.model.WebApp
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun WebAppCard(
     webApp: WebApp,

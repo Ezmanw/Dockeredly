@@ -109,7 +109,7 @@ class GeckoBrowserEngine(
     }
 
     override fun destroy() {
-        geckoView?.setSession(null)
+        geckoView?.releaseSession()
         session?.close()
         session = null
         geckoView = null
@@ -319,6 +319,6 @@ class GeckoBrowserEngine(
             session: GeckoSession,
             prompt: GeckoSession.PromptDelegate.PopupPrompt,
         ): GeckoResult<GeckoSession.PromptDelegate.PromptResponse> =
-            GeckoResult.fromValue(prompt.confirm(GeckoSession.PromptDelegate.PopupPrompt.Response.DENY))
+            GeckoResult.fromValue(prompt.confirm(AllowOrDeny.DENY))
     }
 }
